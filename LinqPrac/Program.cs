@@ -23,6 +23,16 @@ namespace LinqPrac
             { 
                 Console.WriteLine(item);
             }
+
+            //Linq 방식으로 2의 배수 구하기
+            var output2 = from item in input
+                          where item%2==0
+                          orderby item
+                          select item * item; // 제곱을 가져옴
+            foreach (var item in output2)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
