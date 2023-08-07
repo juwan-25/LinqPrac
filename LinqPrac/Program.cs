@@ -24,7 +24,7 @@ namespace LinqPrac
                 Console.WriteLine(item);
             }
 
-            //Linq 방식으로 2의 배수 구하기
+            // Linq 방식으로 2의 배수 구하기
             var output2 = from item in input
                           where item%2==0
                           orderby item
@@ -33,6 +33,11 @@ namespace LinqPrac
             {
                 Console.WriteLine(item);
             }
+
+            // Linq 방식으로 가져온 결과 값은 List 형식이 아님
+            // list, array와 같은 형식으로 사용시 형 변환 필요
+            output = output2.ToList<int>();
+            int[] output3 = output2.ToArray();
         }
     }
 }
